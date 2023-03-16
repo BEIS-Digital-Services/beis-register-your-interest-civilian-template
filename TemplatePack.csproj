@@ -10,10 +10,10 @@
 		<PackageType>Template</PackageType>
 		<PackageVersion>1.0</PackageVersion>
 		<PackageId>Beis.RegisterYourInterest.Civilian</PackageId>
-		<Title>Beis REgister Your Interest Civilian Template</Title>
-		<Authors>Me</Authors>
-		<Description>Templates to use when creating an application for Adatum Corporation.</Description>
-		<PackageTags>dotnet-new;templates;contoso</PackageTags>
+		<Title>Beis Register Your Interest Civilian Template.</Title>
+		<Authors>BEIS</Authors>
+		<Description>Beis Register Your Interest Civilian Template.</Description>
+		<PackageTags>dotnet-new;templates;beis</PackageTags>
 
 		<TargetFramework>netstandard2.0</TargetFramework>
 
