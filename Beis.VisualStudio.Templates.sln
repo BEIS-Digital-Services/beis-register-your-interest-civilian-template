@@ -5,6 +5,8 @@ VisualStudioVersion = 17.4.33103.184
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Beis.RegisterYourInterest", "Beis.RegisterYourInterest\Beis.RegisterYourInterest.csproj", "{EBB86D92-610D-4B7F-B659-A5BB8C039F27}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "templatepack", "templatepack.csproj", "{B78312C0-B88F-44A4-8065-6CD690D1EF94}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{EBB86D92-610D-4B7F-B659-A5BB8C039F27}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EBB86D92-610D-4B7F-B659-A5BB8C039F27}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EBB86D92-610D-4B7F-B659-A5BB8C039F27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B78312C0-B88F-44A4-8065-6CD690D1EF94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B78312C0-B88F-44A4-8065-6CD690D1EF94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B78312C0-B88F-44A4-8065-6CD690D1EF94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B78312C0-B88F-44A4-8065-6CD690D1EF94}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
