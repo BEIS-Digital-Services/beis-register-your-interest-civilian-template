@@ -29,7 +29,7 @@ jobs:
 
       - name: Build solution and generate NuGet package
         run: |  
-          cd ${{env.PROJECT_NAME}}
+          #cd ${{env.PROJECT_NAME}}
           dotnet build TemplatePack.csproj
           dotnet pack TemplatePack.csproj
           #dotnet pack -c Release -o out  
