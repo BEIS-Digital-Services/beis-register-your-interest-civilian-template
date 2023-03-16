@@ -1,11 +1,12 @@
 {
   "$schema": "http://json.schemastore.org/template",
   "author": "BEIS",
+  "description": "BEIS Register Your Interest Civilian Template",
   "classifications": [ "Web" ],
-  "name": "Beis.RegisterYourInterest.Business",
-  "shortName": "Beis.RegisterYourInterest.Business",
+  "name": "Beis.RegisterYourInterest.Civilian",
+  "shortName": "Beis.RegisterYourInterest.Civilian",
   "defaultName": "Beis.RegisterYourInterest1",
-  "identity": "Beis.RegisterYourInterest.Business",
+  "identity": "Beis.RegisterYourInterest.Civilian",
   "tags": {
     "language": "C#",
     "type": "project"
