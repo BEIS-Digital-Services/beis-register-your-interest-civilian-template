@@ -14,11 +14,15 @@ namespace Beis.RegisterYourInterest.Models
         public string ApplicantEmailAddress { get; set; }
         public string ApplicantPhoneNumber { get; set; }
         public string ApplicantRole { get; set; }
-        public string? PostCode { get; internal set; }
-        public IEnumerable<AddressDto> AddressList { get; internal set; }
-        public AddressDto? Address { get; internal set; }
-        public bool? IsThisYourAddress { get; internal set; }
-        public string? HouseNumber { get; internal set; }
-        public bool AddressNotFound { get; internal set; }
+
+
+
+
+        public string? PostCode { get; set; }
+        public IEnumerable<AddressDto> AddressList { get; set; } = Enumerable.Empty<AddressDto>();
+        public AddressDto? Address { get; set; }
+        public bool? IsThisYourAddress { get; set; }
+        public string? HouseNumber { get; set; }
+        public bool AddressNotFound { get; set; }
     }
 }

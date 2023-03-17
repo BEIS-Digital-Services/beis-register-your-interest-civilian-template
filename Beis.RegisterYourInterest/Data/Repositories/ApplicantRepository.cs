@@ -23,7 +23,7 @@ namespace Beis.RegisterYourInterest.Data.Repositories
         {
             var applicant = new Applicant
             {
-                ApplicantName = dto.ApplicantName,
+                full_name = dto.ApplicantName,
                 ApplicantPhoneNumber = dto.ApplicantPhoneNumber,
                 ApplicantRole = dto.ApplicantRole,
                 CompaniesHouseNumber = dto.CompaniesHouseNumber,

@@ -36,7 +36,7 @@ namespace Beis.RegisterYourInterest.Services
 
                 dto.ApplicantEmailAddress = user.Value.email_address;
                 dto.ApplicantPhoneNumber = user.Value.ApplicantPhoneNumber;
-                dto.ApplicantName = user.Value.ApplicantName;
+                dto.ApplicantName = user.Value.full_name;
                 dto.ApplicantRole = user.Value.ApplicantRole;
                 dto.HasFcaNumber = user.Value.HasFcaNumber;
                 dto.CompaniesHouseNumber = user.Value.CompaniesHouseNumber;
