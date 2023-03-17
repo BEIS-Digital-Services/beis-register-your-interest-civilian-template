@@ -38,7 +38,7 @@ namespace Beis.RegisterYourInterest.Controllers
             var result = base.StoreDtoAndModelToSession(model);
             if (result.IsSuccess)
                 if(model.IsThisYourAddress.GetValueOrDefault())
-                    return RedirectToRoute(RouteNames.ThankYouForYourInterestPage);
+                    return RedirectToRoute(RouteNames.ConfirmEmailAddressPage);
                 else 
                     return RedirectToRoute(RouteNames.WhatIsYourAddressPage);
             else

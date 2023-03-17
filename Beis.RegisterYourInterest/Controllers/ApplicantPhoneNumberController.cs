@@ -25,7 +25,7 @@ namespace Beis.RegisterYourInterest.Controllers
                 return View("Index", model);
             }
 
-            return RedirectToRoute(RouteNames.ConfirmEmailAddressPage);
+            return RedirectToRoute(RouteNames.FindYourAddressPage);
         }
 
         public override PhoneNumberViewModel MapDtoToModel(PhoneNumberViewModel model)

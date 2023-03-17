@@ -5,8 +5,8 @@ namespace Beis.RegisterYourInterest.Models
 {
     public class EmailAddressViewModel
     {
-        [Required(ErrorMessage = "Enter your work email address")] 
-        [Email( ErrorMessage = "Enter your work email address")]  
+        [Required(ErrorMessage = "Enter your email address")] 
+        [Email( ErrorMessage = "Enter your email address")]  
         public string EmailAddress { get; set; }
     } 
 }

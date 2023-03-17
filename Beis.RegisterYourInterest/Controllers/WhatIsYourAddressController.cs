@@ -27,7 +27,7 @@ namespace Beis.RegisterYourInterest.Controllers
             model.AddressNotFound = false;
 
             if (base.StoreDtoAndModelToSession(model).IsSuccess)
-                return RedirectToRoute(RouteNames.ThankYouForYourInterestPage);
+                return RedirectToRoute(RouteNames.ConfirmEmailAddressPage);
             else
                 return View(nameof(Index), model);
         }

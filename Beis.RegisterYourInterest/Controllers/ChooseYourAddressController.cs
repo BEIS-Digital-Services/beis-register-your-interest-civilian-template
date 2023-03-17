@@ -32,7 +32,7 @@ namespace Beis.RegisterYourInterest.Controllers
         {
             var result = base.StoreDtoAndModelToSession(model);
             if (result.IsSuccess)
-                return RedirectToRoute(RouteNames.ThankYouForYourInterestPage);
+                return RedirectToRoute(RouteNames.ConfirmEmailAddressPage);
             else
                 return View(nameof(Index), model);
         }

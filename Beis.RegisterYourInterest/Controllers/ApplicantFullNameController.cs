@@ -28,7 +28,7 @@ namespace Beis.RegisterYourInterest.Controllers
             }
 
 
-            return RedirectToRoute(RouteNames.ApplicantRolePage);
+            return RedirectToRoute(RouteNames.ApplicantEmailAddressPage);
         }
 
         public override FullNameViewModel MapDtoToModel(FullNameViewModel model)
