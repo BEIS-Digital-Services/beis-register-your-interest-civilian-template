@@ -127,7 +127,7 @@ try
     {
         using (var scope = app.Services.CreateScope())
         {
-            var db = scope.ServiceProvider.GetRequiredService<Beis.RegisterYourInterest.Data.RegisterYourInterestDbContext<Applicant>>();
+            var db = scope.ServiceProvider.GetRequiredService<Beis.RegisterYourInterest.Data.RegisterYourInterestDbContext>();
             db.Database.Migrate();
         }
     }

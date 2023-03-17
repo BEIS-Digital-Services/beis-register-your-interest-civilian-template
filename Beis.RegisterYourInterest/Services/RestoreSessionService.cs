@@ -35,15 +35,10 @@ namespace Beis.RegisterYourInterest.Services
                 }
 
                 dto.ApplicantEmailAddress = user.Value.email_address;
-                dto.ApplicantPhoneNumber = user.Value.ApplicantPhoneNumber;
+                dto.ApplicantPhoneNumber = user.Value.applicant_phone_number;
                 dto.ApplicantName = user.Value.full_name;
-                dto.ApplicantRole = user.Value.ApplicantRole;
-                dto.HasFcaNumber = user.Value.HasFcaNumber;
-                dto.CompaniesHouseNumber = user.Value.CompaniesHouseNumber;
-                dto.CompanyHouseResponse = null; //load this form db or requery api if needed.
-                dto.FCAFullRegistrationNumber = user.Value.FCAFullRegistrationNumber ?? string.Empty;
-                dto.HasCompaniesHouseNumber = user.Value.HasFcaNumber;
-
+                dto.Address = AddressDto.FromEntity(user.Value.address);
+           
                 _sessionService.Set(nameof(WebApplicationDto), dto, _httpContextAccessor.HttpContext);
 
                 return Result.Ok();

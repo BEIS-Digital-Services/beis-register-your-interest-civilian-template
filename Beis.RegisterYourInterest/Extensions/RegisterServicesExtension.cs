@@ -17,9 +17,7 @@ namespace Beis.RegisterYourInterest.Extensions
         {
             /***** if you are not using redis substitute the session service implementation below with Beis.Common.Services.CookieSessionService *****/
             builder.Services.AddSingleton<ISessionService, SessionService>();
-            builder.Services.AddScoped<ICookieService, CookieService>();
-            builder.Services.AddScoped<IFCASocietyService, FCASocietyService>();
-            builder.Services.AddScoped<ICompanyHouseResultService, CompanyHouseResultService>();
+            builder.Services.AddScoped<ICookieService, CookieService>();       
             builder.Services.AddHttpClient<IAddressLookupService, AddressLookupService>();
 
 
@@ -28,7 +26,7 @@ namespace Beis.RegisterYourInterest.Extensions
             builder.Services.AddScoped<IRestoreSessionService, RestoreSessionService>();
 
             builder.Services.AddSingleton<IRestClientFactory, RestClientFactory>();
-            builder.Services.AddSingleton<ICompanyHouseHttpConnection<CompanyHouseResponse>, CompanyHouseConnection>();
+           
 
         }
 

@@ -14,12 +14,10 @@ namespace Beis.RegisterYourInterest.Extensions
         public static void RegisterDbContexts(this WebApplicationBuilder builder)
         {
             var databaseConnectionString = builder.Configuration[ConnectionStringConfigurationKey];
+            builder.Services.AddDbContext<RegisterYourInterestDbContext>(options => options.UseNpgsql(databaseConnectionString));
             builder.Services.AddDbContext<RegisterYourInterestDbContext<Applicant>>(options => options.UseNpgsql(databaseConnectionString));
             builder.Services.AddScoped<IBaseUserDbContext<BaseUserEntity>, RegisterYourInterestDbContext<Applicant>>();
-            //builder.Services.AddScoped<IBaseUserDbContext<BaseUserEntity>>(x => x.GetService<RegisterYourInterestDbContext<Applicant>>() as IBaseUserDbContext<BaseUserEntity>);
-            builder.Services.AddScoped<IFCASocietyDbContext, RegisterYourInterestDbContext<Applicant>>(); 
-            builder.Services.AddScoped<ICompanyHouseDbContext, RegisterYourInterestDbContext<Applicant>>();
-
+           
         }
     }
 }

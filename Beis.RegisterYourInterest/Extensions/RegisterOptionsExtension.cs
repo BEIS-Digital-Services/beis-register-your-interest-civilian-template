@@ -14,14 +14,11 @@ namespace Beis.RegisterYourInterest.Extensions
             services.Configure<CookieNamesConfiguration>(configuration.GetSection("CookieNamesConfiguration"));
             services.AddOptions<UrlOptions>().Bind(configuration).ValidateDataAnnotations();
 
-            services.AddOptions<CompanyHouseSettings>().Bind(configuration).ValidateDataAnnotations();
-
             services.AddOptions<NotifyServiceSettings>().Bind(configuration).ValidateDataAnnotations();
 
             services.Configure<ForwardedHeadersOptions>(options => options.ForwardedHeaders = ForwardedHeaders.All);
             services.Configure<CookiePolicyOptions>(options => options.Secure = CookieSecurePolicy.Always);
-
-            //services.Configure<OSPlacesAPIConfiguration>(configuration.GetSection("OSPlacesAPI"));
+            
             services.AddOptions<OSPlacesAPIConfiguration>().Bind(configuration.GetSection("OSPlacesAPI"));
         }
 
@@ -32,8 +29,7 @@ namespace Beis.RegisterYourInterest.Extensions
             builder.Services.Configure<CookieNamesConfiguration>(builder.Configuration.GetSection("CookieNamesConfiguration"));
             builder.Services.AddOptions<UrlOptions>().Bind(builder.Configuration).ValidateDataAnnotations();
 
-            builder.Services.AddOptions<CompanyHouseSettings>().Bind(builder.Configuration).ValidateDataAnnotations();
-
+          
             builder.Services.AddOptions<NotifyServiceSettings>().Bind(builder.Configuration).ValidateDataAnnotations();
 
             builder.Services.Configure<ForwardedHeadersOptions>(options => options.ForwardedHeaders = ForwardedHeaders.All);

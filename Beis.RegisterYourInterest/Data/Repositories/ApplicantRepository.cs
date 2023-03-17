@@ -24,20 +24,17 @@ namespace Beis.RegisterYourInterest.Data.Repositories
             var applicant = new Applicant
             {
                 full_name = dto.ApplicantName,
-                ApplicantPhoneNumber = dto.ApplicantPhoneNumber,
-                ApplicantRole = dto.ApplicantRole,
-                CompaniesHouseNumber = dto.CompaniesHouseNumber,
                 email_address = dto.ApplicantEmailAddress,
-                FCAFullRegistrationNumber = dto.FCAFullRegistrationNumber,
-                HasCompaniesHouseNumber = dto.HasCompaniesHouseNumber,
-                HasFcaNumber = dto.HasFcaNumber,
+                applicant_phone_number = dto.ApplicantPhoneNumber,
+                address = dto.Address?.ToEntity()                               
+           
             };
             return await base.CreateAsync(applicant);
         }
 
         public async Task<Result<Applicant>> FindByIdAsync(int userId)
         {
-            var user = await _dbContext.applicants.FindAsync(userId);
+            var user = await _dbContext.applicants.Include(x => x.address).SingleOrDefaultAsync( x => x.id == userId);
             if (user == null)
             {
                 return Result.Fail("User not found.");
@@ -47,7 +44,7 @@ namespace Beis.RegisterYourInterest.Data.Repositories
 
         public async Task<Result<Applicant>> FindByEmailAddressAsync(string emailAddress)
         {
-            var user = await _dbContext.applicants.SingleOrDefaultAsync(x => EF.Functions.Like(x.email_address, emailAddress));
+            var user = await _dbContext.applicants.Include(x => x.address).SingleOrDefaultAsync(x => EF.Functions.Like(x.email_address, emailAddress));
             if (user == null)
             {
                 return Result.Fail($"User {emailAddress} not found.");
