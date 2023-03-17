@@ -21,6 +21,8 @@ namespace Beis.RegisterYourInterest.Extensions
             services.Configure<ForwardedHeadersOptions>(options => options.ForwardedHeaders = ForwardedHeaders.All);
             services.Configure<CookiePolicyOptions>(options => options.Secure = CookieSecurePolicy.Always);
 
+            //services.Configure<OSPlacesAPIConfiguration>(configuration.GetSection("OSPlacesAPI"));
+            services.AddOptions<OSPlacesAPIConfiguration>().Bind(configuration.GetSection("OSPlacesAPI"));
         }
 
         public static void RegisterOptions(this WebApplicationBuilder builder)
@@ -37,6 +39,8 @@ namespace Beis.RegisterYourInterest.Extensions
             builder.Services.Configure<ForwardedHeadersOptions>(options => options.ForwardedHeaders = ForwardedHeaders.All);
             builder.Services.Configure<CookiePolicyOptions>(options => options.Secure = CookieSecurePolicy.Always);
 
+            //builder.Services.Configure<OSPlacesAPIConfiguration>(builder.Configuration.GetSection("OSPlacesAPI"));
+            builder.Services.AddOptions<OSPlacesAPIConfiguration>().Bind(builder.Configuration.GetSection("OSPlacesAPI"));
         }
     }
 }

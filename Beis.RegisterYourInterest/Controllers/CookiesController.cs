@@ -1,7 +1,7 @@
 ﻿
 using Microsoft.AspNetCore.Mvc;
 
-namespace Beis.Ebss.ApplicationPortal.Web.Controllers
+namespace Beis.RegisterYourInterest.Controllers
 {
     public class CookiesController : Controller
     {

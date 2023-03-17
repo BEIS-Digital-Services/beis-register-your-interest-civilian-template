@@ -20,6 +20,7 @@ namespace Beis.RegisterYourInterest.Extensions
             builder.Services.AddScoped<ICookieService, CookieService>();
             builder.Services.AddScoped<IFCASocietyService, FCASocietyService>();
             builder.Services.AddScoped<ICompanyHouseResultService, CompanyHouseResultService>();
+            builder.Services.AddHttpClient<IAddressLookupService, AddressLookupService>();
 
 
             builder.Services.AddScoped<IApplicantService, ApplicantService>();

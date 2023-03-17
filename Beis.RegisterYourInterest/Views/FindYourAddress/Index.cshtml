@@ -1,0 +1,40 @@
+﻿@model FindYourAddressViewModel
+@{
+    ViewData["Title"] = "Find your address";
+}
+@section BackLink {
+    <a asp-route="@TempData["PreviousPage"]" class="govuk-back-link">Back</a>
+    @{
+        TempData.Keep("PreviousPage");
+    }
+}
+
+<form asp-route="@RouteNames.FindYourAddressPage" method="post">
+   <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+         <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+               <h1 class="govuk-fieldset__heading">
+                  Find your address
+               </h1>
+            </legend>
+            <div class="govuk-form-group">
+               <label class="govuk-label" asp-for="HouseNumber">
+                    House number (if you have one)
+               </label>
+               <input asp-for="HouseNumber" class="govuk-input govuk-input--width-5" type="text">
+            </div>
+            <div class="govuk-form-group" highlight-error-for="PostCode" error-class="govuk-form-group--error">
+               <label class="govuk-label" asp-for="PostCode">
+                    Postcode
+               </label>
+                <span asp-validation-for="PostCode" class="govuk-error-message"></span>
+               <input asp-for="PostCode" class="govuk-input govuk-input--width-10" type="text" autocomplete="postal-code">
+            </div>
+         </fieldset>
+         <button class="govuk-button" data-module="govuk-button">
+            Continue
+         </button>
+      </div>
+   </div>
+</form>

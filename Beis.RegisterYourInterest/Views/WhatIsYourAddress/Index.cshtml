@@ -1,0 +1,73 @@
+﻿@model WhatIsYourAddressViewModel
+@{
+    ViewData["Title"] = "What is your address?";
+}
+@section BackLink {
+    <a asp-route="@RouteNames.ChooseYourAddressPage" class="govuk-back-link">Back</a>
+}
+
+@if (Model.AddressNotFound)
+{
+    <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+        <div class="govuk-notification-banner__header">
+            <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+                Important
+            </h2>
+        </div>
+        <div class="govuk-notification-banner__content">
+            <p class="govuk-notification-banner__heading">The address could not be found. Enter your address manually.</p>
+        </div>
+    </div>
+}
+
+<form asp-route="@RouteNames.WhatIsYourAddressPage" method="post">
+   @Html.HiddenFor(m => m.AddressNotFound)
+   <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+         <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+               <h1 class="govuk-fieldset__heading">
+                  What is your address?
+               </h1>
+            </legend>
+            <p class="govuk-hint">We will use your address to check whether your home is eligible for energy bill support and you need to apply for it. Most homes are receiving support automatically.</p>
+            <div class="govuk-form-group" highlight-error-for="AddressLine1" error-class="govuk-form-group--error">
+               <label class="govuk-label"  asp-for="AddressLine1">
+               Address line 1
+               </label>
+               <span asp-validation-for="AddressLine1" class="govuk-error-message"></span>
+               <input class="govuk-input" asp-for="AddressLine1" type="text" autocomplete="address-line1">
+            </div>
+            <div class="govuk-form-group">
+               <label class="govuk-label" asp-for="AddressLine2">
+               Address line 2 (optional)
+               </label>
+               <input class="govuk-input" asp-for="AddressLine2" type="text" autocomplete="address-line2">
+            </div>
+            <div class="govuk-form-group" highlight-error-for="TownOrCity" error-class="govuk-form-group--error">
+               <label class="govuk-label" asp-for="TownOrCity">
+               Town or city
+               </label>
+               <span asp-validation-for="TownOrCity" class="govuk-error-message"></span>
+               <input class="govuk-input govuk-!-width-two-thirds" asp-for="TownOrCity" type="text" autocomplete="address-level2">
+            </div>
+            <div class="govuk-form-group">
+               <label class="govuk-label" asp-for="County">
+               County (optional)
+               </label>
+               <input class="govuk-input govuk-!-width-two-thirds" asp-for="County" type="text">
+            </div>
+            <div class="govuk-form-group" highlight-error-for="PostCode" error-class="govuk-form-group--error">
+               <label class="govuk-label" asp-for="PostCode">
+               Postcode
+               </label>
+               <span asp-validation-for="PostCode" class="govuk-error-message"></span>
+               <input class="govuk-input govuk-input--width-10" asp-for="PostCode" type="text" autocomplete="postal-code">
+            </div>
+         </fieldset>
+         <button class="govuk-button" data-module="govuk-button">
+         Continue
+         </button>
+      </div>
+   </div>
+</form>

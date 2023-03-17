@@ -32,6 +32,11 @@ namespace Beis.RegisterYourInterest.Infrastructure
 
         public const string ThankYouForYourInterestPage = "ThankYouForYourInterestPage";
 
+        public const string FindYourAddressPage = "FindYourAddressPage";
+        public const string ConfirmAddressPage = "ConfirmAddressPage";
+        public const string ChooseYourAddressPage = "ChooseYourAddressPage";
+        public const string WhatIsYourAddressPage = "WhatIsYourAddressPage";
+
 
 
     }
@@ -65,6 +70,11 @@ namespace Beis.RegisterYourInterest.Infrastructure
         public const string VerifyEmailAddressPage = CommonConstants.VerifyEmailAddressPath;
 
         public const string ThankYouForYourInterestPage = "thank-you-for-your-interest";
+
+        public const string FindYourAddressPage = "find-your-address";
+        public const string ChooseYourAddressPage = "choose-your-address";
+        public const string ConfirmAddressPage = "is-this-your-address";
+        public const string WhatIsYourAddressPage = "what-is-your-address";
     }
 
     public static class RoutePathNameMap

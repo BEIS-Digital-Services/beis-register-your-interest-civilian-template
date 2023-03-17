@@ -1,0 +1,45 @@
+﻿@model ConfirmAddressViewModel
+@{
+    ViewData["Title"] = "Is this your address?";
+}
+@section BackLink {
+    <a asp-route="@RouteNames.FindYourAddressPage" class="govuk-back-link">Back</a>
+}
+
+<form asp-route="@RouteNames.ConfirmAddressPage" method="post">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <div class="govuk-form-group" highlight-error-for="IsThisYourAddress" error-class="govuk-form-group--error">
+                <fieldset class="govuk-fieldset" aria-describedby="is-this-your-address-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h1 class="govuk-fieldset__heading">
+                            Is this your address?
+                        </h1>
+                    </legend>
+                    <div id="is-this-your-address-hint" class="govuk-hint">
+                        <p class="govuk-body-l govuk-!-margin-bottom-2">@Model?.Address.ToString()</p>
+                        <p class="govuk-body">If this is not your address, you can enter it manually on the next page</p>
+                    </div>
+                    <span asp-validation-for="IsThisYourAddress" class="govuk-error-message"></span>
+                    <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input asp-for="IsThisYourAddress" id="IsThisYourAddressYes" class="govuk-radios__input" type="radio" value="true">
+                            <label class="govuk-label govuk-radios__label" asp-for="IsThisYourAddress">
+                                Yes
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input asp-for="IsThisYourAddress" id="IsThisYourAddressNo" class="govuk-radios__input" type="radio" value="false" id="IsThisYourAddressNo">
+                            <label class="govuk-label govuk-radios__label" for="IsThisYourAddressNo">
+                                No
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <button class="govuk-button" data-module="govuk-button">
+                Continue
+            </button>
+        </div>
+    </div>
+</form>
